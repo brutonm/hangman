@@ -10,6 +10,42 @@
     margin-left: 25px;
 }
 .whole-keyboard {
-    margin-left: 500px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    vertical-align: top;
+}
+.keyboard-row-one-two {
+    margin-bottom: 2px;
+}
+.keyboard-row-two-two {
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+.keyboard-row-three-two {
+    margin-bottom: 2px;
+    margin-left: 25px;
+}
+.game-message {
+    text-align:center
+}
+.gallows {
+    display: inline-block;
+}
+.player-one {
     margin-top: 100px;
+    margin-left: 100px;
+}
+.hm-letter-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: large;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-right: 10px;
+    text-align: center;
 }

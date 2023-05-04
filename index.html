@@ -8,19 +8,29 @@
         <link href="index.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="whole-keyboard">
-            <div class="keyboard-row-one">
-                <button onclick="keyboardPress('Q')" class="let-btn">Q</button>
-                <button onclick="keyboardPress('W')" class="let-btn">W</button>
-                <button onclick="keyboardPress('E')" class="let-btn">E</button>
-                <button onclick="keyboardPress('R')" class="let-btn">R</button>
-                <button onclick="keyboardPress('T')" class="let-btn">T</button>
-                <button onclick="keyboardPress('Y')" class="let-btn">Y</button>
-                <button onclick="keyboardPress('U')" class="let-btn">U</button>
-                <button onclick="keyboardPress('I')" class="let-btn">I</button>
-                <button onclick="keyboardPress('O')" class="let-btn">O</button>
-                <button onclick="keyboardPress('P')" class="let-btn">P</button><br>
-             </div>
+        <div class="game-message">
+            <button class="game-button" onclick="startNewGame()">NEW GAME!</button><br />
+            <label id="lblGameStatus" class="game-status">Press New Game To Start!</label>
+        </div>
+        <div class="player-one">
+            <div class="gallows">
+                <canvas id="playerOneGallow" height="400px" width="300px">
+                    "Get a better computer loser"
+                </canvas>
+            </div>
+            <div class="whole-keyboard">
+                <div class="keyboard-row-one">
+                    <button onclick="keyboardPress('Q')" class="let-btn">Q</button>
+                    <button onclick="keyboardPress('W')" class="let-btn">W</button>
+                    <button onclick="keyboardPress('E')" class="let-btn">E</button>
+                    <button onclick="keyboardPress('R')" class="let-btn">R</button>
+                    <button onclick="keyboardPress('T')" class="let-btn">T</button>
+                    <button onclick="keyboardPress('Y')" class="let-btn">Y</button>
+                    <button onclick="keyboardPress('U')" class="let-btn">U</button>
+                    <button onclick="keyboardPress('I')" class="let-btn">I</button>
+                    <button onclick="keyboardPress('O')" class="let-btn">O</button>
+                    <button onclick="keyboardPress('P')" class="let-btn">P</button><br>
+                </div>
                 <div class="keyboard-row-two">
                     <button onclick="keyboardPress('A')" class="let-btn">A</button>
                     <button onclick="keyboardPress('S')" class="let-btn">S</button>
@@ -32,15 +42,18 @@
                     <button onclick="keyboardPress('K')" class="let-btn">K</button>
                     <button onclick="keyboardPress('L')" class="let-btn">L</button><br>
                 </div>
-                     <div class="keyboard-row-three">
-                        <button onclick="keyboardPress('Z')" class="let-btn">z</button>
-                        <button onclick="keyboardPress('X')" class="let-btn">X</button>
-                        <button onclick="keyboardPress('C')" class="let-btn">C</button>
-                        <button onclick="keyboardPress('V')" class="let-btn">V</button>
-                        <button onclick="keyboardPress('B')" class="let-btn">B</button>
-                        <button onclick="keyboardPress('N')" class="let-btn">N</button>
-                        <button onclick="keyboardPress('M')" class="let-btn">M</button>   
-                     </div>
+                <div class="keyboard-row-three">
+                    <button onclick="keyboardPress('Z')" class="let-btn">Z</button>
+                    <button onclick="keyboardPress('X')" class="let-btn">X</button>
+                    <button onclick="keyboardPress('C')" class="let-btn">C</button>
+                    <button onclick="keyboardPress('V')" class="let-btn">V</button>
+                    <button onclick="keyboardPress('B')" class="let-btn">B</button>
+                    <button onclick="keyboardPress('N')" class="let-btn">N</button>
+                    <button onclick="keyboardPress('M')" class="let-btn">M</button>   
+                </div>
+            </div>
+            <div id="playerOneWordSpaces"></div>
         </div>
+        
     </body>
 </html>
