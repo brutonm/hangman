@@ -173,20 +173,21 @@ const drawSadFace = () => {
         context.beginPath();
         context.strokeStyle = 'red';
         context.lineWidth = 3;
-        context.moveTo();
-        context.lineTo();
-        context.moveTo();
-        context.lineTo();
+        context.moveTo(195, 40);
+        context.lineTo(185, 50);
+        context.moveTo(185, 40);
+        context.lineTo(195, 50);
         context.stroke();
 
         // right dead eye
         context.beginPath();
         context.strokeStyle = 'red';
         context.lineWidth = 3;
-        context.moveTo();
-        context.lineTo();
-        context.moveTo();
-        context.lineTo();
+        context.moveTo(215, 40);
+        context.lineTo(205, 50);
+        context.moveTo(205, 40);
+        context.lineTo(215, 50);
+
         context.stroke();
 
 
