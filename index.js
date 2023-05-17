@@ -172,7 +172,19 @@ const drawSadFace = () => {
         // left dead eye
         context.beginPath();
         context.strokeStyle = 'red';
-        context.lineWidth = 2;
+        context.lineWidth = 3;
+        context.moveTo();
+        context.lineTo();
+        context.moveTo();
+        context.lineTo();
+        context.stroke();
+
+        // right dead eye
+        context.beginPath();
+        context.strokeStyle = 'red';
+        context.lineWidth = 3;
+        context.moveTo();
+        context.lineTo();
         context.moveTo();
         context.lineTo();
         context.stroke();
@@ -298,3 +310,8 @@ const drawGallows = () => {
 
     context.stroke();
 };
+
+const keyboardPress = (letter) => {
+
+};
+
