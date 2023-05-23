@@ -137,6 +137,8 @@ const keyboardPress = (letterBeingPassedIn) => {
     if (playingGame = true) {
         document.getElementById(`btn${letterBeingPassedIn}`).disabled = true;
     }
+
+    
 };
 
 const drawHead = () => {
