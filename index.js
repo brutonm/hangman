@@ -134,11 +134,13 @@ const startNewGame = () => {
 
 const keyboardPress = (letterBeingPassedIn) => {
     console.log(letterBeingPassedIn);
-    if (playingGame = true) {
+    if (!playingGame) {
+        return;
+    }else{
         document.getElementById(`btn${letterBeingPassedIn}`).disabled = true;
     }
 
-    
+
 };
 
 const drawHead = () => {
