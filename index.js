@@ -1,6 +1,7 @@
-
 let wordToGuess = '';
-
+let lettersGuessed = '';
+let missedGuesses = 0;
+let playingGame = false;
 
 
 document.addEventListener('DOMContentLoaded', e => {
@@ -121,6 +122,21 @@ const startNewGame = () => {
     drawGallows();
     document.getElementById('lblGameStatus').innerText = 'Click the letters to guess the word!';
     drawWholeThing();
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    for (let i = 0; i < alphabet.length; i++) {
+        document.getElementById(`btn${alphabet[i]}`).disabled = false;
+    }
+ wordToGuess = '';
+ lettersGuessed = '';
+ missedGuesses = 0;
+ playingGame = true;
+};
+
+const keyboardPress = (letterBeingPassedIn) => {
+    console.log(letterBeingPassedIn);
+    if (playingGame = true) {
+        document.getElementById(`btn${letterBeingPassedIn}`).disabled = true;
+    }
 };
 
 const drawHead = () => {
@@ -311,8 +327,3 @@ const drawGallows = () => {
 
     context.stroke();
 };
-
-const keyboardPress = (letter) => {
-
-};
-
