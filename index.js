@@ -121,15 +121,13 @@ const startNewGame = () => {
     clearGallows();
     drawGallows();
     document.getElementById('lblGameStatus').innerText = 'Click the letters to guess the word!';
-    drawWholeThing();
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (let i = 0; i < alphabet.length; i++) {
         document.getElementById(`btn${alphabet[i]}`).disabled = false;
     }
- wordToGuess = '';
- lettersGuessed = '';
- missedGuesses = 0;
- playingGame = true;
+    lettersGuessed = '';
+    missedGuesses = 0;
+    playingGame = true;
 };
 
 const keyboardPress = (letterBeingPassedIn) => {
@@ -140,9 +138,66 @@ const keyboardPress = (letterBeingPassedIn) => {
         document.getElementById(`btn${letterBeingPassedIn}`).disabled = true;
     }
 
+    lettersGuessed += letterBeingPassedIn.toLowerCase();
+    const foundLetter = wordToGuess.toLowerCase().includes(letterBeingPassedIn.toLowerCase());
+    if (foundLetter) {
+        revealLetter(letterBeingPassedIn);
+        if (areAllLettersGuessed()) {
+            drawHead();
+            drawBody();
+            drawArmLeft();
+            drawArmRight();
+            drawLegLeft();
+            drawLegRight();
+            drawHappyFace();
+            document.getElementById('lblGameStatus').innerText = 'You Won! Click New Game To Play Again.';
+            playingGame = false;
+        }
+    } else {
+        missedGuesses++;
 
+    if (missedGuesses == 1) {
+    drawHead();
+   }else if (missedGuesses == 2) {
+    drawBody();
+   }else if (missedGuesses == 3) {
+    drawArmLeft();
+   }else if (missedGuesses == 4) {
+    drawArmRight();
+   }else if (missedGuesses == 5) {
+    drawLegLeft();
+   }else if (missedGuesses == 6) {
+    drawLegRight();
+   }else if (missedGuesses == 7) {
+    drawSadFace();
+    document.getElementById('lblGameStatus').innerText = 'You Lost. Click New Game To Play Again.';
+    playingGame = false;
+   }
+
+
+}
 };
 
+const areAllLettersGuessed = () => {
+    console.log('bla');
+    for (let i = 0; i < wordToGuess.length; i++) {
+        const currentwordletter = wordToGuess[i].toLowerCase();
+        if (!lettersGuessed.includes(currentwordletter)) {
+            return false;
+        }
+    } 
+    return true;
+};
+
+const revealLetter = (letterBeingPassedIn) => {
+    for (let i = 0; i < wordToGuess.length; i++) {
+        const currentwordletter = wordToGuess[i];
+        if (letterBeingPassedIn.toLowerCase() === currentwordletter.toLowerCase()) {
+            const inputvar = document.getElementById(`hm-placeholder${i}`);
+            inputvar.value = currentwordletter;
+        };
+    };
+};
 const drawHead = () => {
     const canvas = document.getElementById('playerOneGallow');
     if (canvas.getContext('2d')) {
@@ -272,15 +327,6 @@ const drawLegRight = () => {
             context.lineTo(250, 280);
         
         context.stroke();
-};
-
-const drawWholeThing = () => {
-    drawHead();
-    drawBody();
-    drawArmRight();
-    drawArmLeft();
-    drawLegRight();
-    drawLegLeft();
 };
 
 const drawLetterPlaces = (word) => {
